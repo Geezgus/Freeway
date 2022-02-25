@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/theme_song.wav-7e4eaf9d05fe4981f18bd72af958c21c.sample"
+
+[deps]
+
+source_file="res://assets/sounds/theme_song.wav"
+dest_files=[ "res://.import/theme_song.wav-7e4eaf9d05fe4981f18bd72af958c21c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
