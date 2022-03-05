@@ -85,5 +85,6 @@ func _on_Player2_score():
 
 
 func _on_HUD_restart():
-	for scoreboard in scoreboards: scoreboard = 0
+	scoreboards[0] = 0
+	scoreboards[1] = 0
 	_ready()
