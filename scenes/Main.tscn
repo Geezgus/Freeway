@@ -20,13 +20,11 @@ centered = false
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 590, 690 )
 z_index = 2
-walk_speed = 3
 
 [node name="Player2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 690, 690 )
 z_index = 2
-walk_speed = 3
-player = 2
+player_index = 2
 
 [node name="FinishLine" parent="." instance=ExtResource( 3 )]
 position = Vector2( 0, 56 )

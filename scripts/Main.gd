@@ -14,17 +14,16 @@ var fast_lanes_to_left = [272, 104]
 
 var scoreboards = [0, 0]
 
-
 func _ready():
 	for _player in get_children(): if "Player" in _player.name:
 		_player.position = Vector2(_player.initial_position_x, _player.initial_position_y)
 		_player.walk_speed = _player.initial_walk_speed
-	
+
 	$AudioThemeSong.play()
-	
+
 	$TimerFastCars.start()
 	$TimerSlowCars.start()
-	
+
 	$HUD/Message.visible = false
 	$HUD/Scoreboard.text = "0"
 	$HUD/Scoreboard2.text = "0"
@@ -47,11 +46,11 @@ func make_car(lanes, min_speed, max_speed, start_point, goes_right):
 	var car = CAR_SCENE.instance()
 	var lane = lanes[randi() % lanes.size()]
 	var orientation = 1 if goes_right else -1
-	
+
 	car.flip(false, not goes_right)	
-	
+
 	add_child(car)
-		
+
 	car.position = Vector2(start_point, lane)
 	car.linear_velocity = Vector2(orientation * rand_range(min_speed, max_speed), 0)
 	car.linear_damp = -1
@@ -60,14 +59,14 @@ func make_car(lanes, min_speed, max_speed, start_point, goes_right):
 func pause_after_win(player):
 	$AudioThemeSong.stop()
 	$AudioVictory.play()
-	 
+
 	$TimerFastCars.stop()
 	$TimerSlowCars.stop()
-	
+
 	$HUD/Message.visible = true
 	$HUD/Button.visible = true
-	$HUD/Message.render("Player "+str(player.player)+" wins!")
-	
+	$HUD/Message.render("Player "+str(player.player_index)+" wins!")
+
 	for _player in get_children(): if "Player" in _player.name:
 		_player.walk_speed = 0
 
